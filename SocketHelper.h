@@ -1,4 +1,6 @@
 #pragma once
+// For some reason, inet_pton is not recognized in the ws2tcpip.h header unless we define what version
+// of Windows we are targeting. In this case we are targeting Windows 10
 #define _WIN32_WINNT 0x0A00
 #include <winsock2.h>
 #include <ws2tcpip.h>
