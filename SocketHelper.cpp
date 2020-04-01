@@ -27,7 +27,6 @@ int SocketHelper::get_data(char* outDataBuffer, int outDataBuffer_Size)
 {
 	// If care about the sender's information like IP address you can pass the sender_address_ struct into the recvfrom
 	//return recvfrom(receive_socket_, outDataBuffer, outDataBuffer_Size, 0, reinterpret_cast<sockaddr*>(&sender_address_), &sender_address_size_);
-
 	return recvfrom(receive_socket_, outDataBuffer, outDataBuffer_Size, 0, nullptr, nullptr);
 }
 

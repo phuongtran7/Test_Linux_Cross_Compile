@@ -1,6 +1,7 @@
 #include <iostream>
 #include "SocketHelper.h"
 #include <vector>
+#include <array>
 
 SocketHelper send_socket;
 
@@ -27,8 +28,8 @@ int main()
 	}
 
 	while (1) {
-		char buffer[50];
-		auto byte_received = send_socket.get_data(buffer, sizeof(buffer));
+		std::array<char, 50> buffer{};
+		auto byte_received = send_socket.get_data(buffer.data(), sizeof(buffer));
 		if (byte_received != 0) {
 			std::cout << "Got " << byte_received << " bytes.\n";
 		}
