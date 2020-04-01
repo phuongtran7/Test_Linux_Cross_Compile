@@ -2,11 +2,6 @@
 #include "SocketHelper.h"
 #include <vector>
 
-struct outData
-{
-	int Count;
-};
-
 SocketHelper send_socket;
 
 int main()
@@ -32,7 +27,6 @@ int main()
 	}
 
 	while (1) {
-        outData data_to_receive{};
 		char buffer[50];
 		auto byte_received = send_socket.get_data(buffer, sizeof(buffer));
 		if (byte_received != 0) {
